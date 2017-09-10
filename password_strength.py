@@ -12,7 +12,6 @@ password_patterns_list = list(['^(\d|[A-Z]|[a-z]|[!@#$&*%,./:;^_=?\(\)\{\}\[\]])
 
 
 def check_password_in_top_list(password):
-    """Функция проверяет наличие пароля в самых популярных"""
     with open('10_million_password_list_top_10000.txt', 'r', encoding='UTF-8') as password_list:
         for password_list_line in password_list:
             if password_list_line.rstrip() == password:
@@ -20,7 +19,6 @@ def check_password_in_top_list(password):
 
 
 def get_password_strength(password):
-    """Функция выводит сложность пароля согласно условию(паттерну)"""
     strength = 1
     if check_password_in_top_list(password):
         return strength
