@@ -1,6 +1,16 @@
 # Password Strength Calculator
 
-[TODO. There will be project description]
+password_strength.py file contain one function that checking ur password strength. The way it does it looks like: checking password in most popular passwords
+(10_million_password_list_top_10000.txt), checking strength of password by criteria(patterns).
+
+#Quickstart
+
+Windows 10, PS:
+```#!bash
+
+PS C:\ python password_strength.py <your password>
+Сложность вашего пароля: <1 to 10>
+```
 
 # Project Goals
 
