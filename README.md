@@ -3,7 +3,7 @@
 password_strength.py file contain one function that checking ur password strength. The way it does it looks like: checking password in most popular passwords
 (10_million_password_list_top_10000.txt), checking strength of password by criteria(patterns).
 
-#Quickstart
+# Quickstart
 
 Windows 10, PS:
 ```#!bash
