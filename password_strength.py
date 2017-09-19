@@ -23,16 +23,17 @@ def load_password_top_list():
         return password_list
 
 
-def check_password_in_top_list(password):
-    password_list = load_password_top_list()
+def check_password_in_top_list(password, password_list):
     for password_list_item in password_list:
         if password_list_item == password:
-            return True
+            password = None
+            return password
+    return password
 
 
 def get_password_strength(password):
     strength = 1
-    if check_password_in_top_list(password):
+    if not password:
         return strength
     for password_pattern in password_patterns_list:
         if re.search(password_pattern, password):
@@ -45,5 +46,7 @@ def get_password_strength(password):
 
 
 if __name__ == '__main__':
-    print('Сложность вашего пароля: {}'.format(get_password_strength(sys.argv[1])))
+    password_list = load_password_top_list()
+    password = check_password_in_top_list(sys.argv[1], password_list)
+    print('Сложность вашего пароля: {}'.format(get_password_strength(password)))
 
